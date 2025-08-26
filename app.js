@@ -18,6 +18,8 @@ function startGame(card){
     carta.innerHTML = cartasEmbaralhadas[index];
     carta.dataset.emoji = cartasEmbaralhadas[index];
     carta.classList.remove('virado');
+    pontuação = 0;
+    pontos.innerText = "Pontuação:" + pontuação;
     }) 
 
     setTimeout(() =>{
