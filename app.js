@@ -45,7 +45,6 @@ function desvirarCarta(card){
         bloqueado = true;
     }
 
-    /*if(cartaVirada && cartaVirada2){*/
         if(cartaVirada.dataset.emoji === cartaVirada2.dataset.emoji){
             cartaVirada.classList.add('acertou');
             cartaVirada2.classList.add('acertou');
@@ -61,8 +60,7 @@ function desvirarCarta(card){
                 audio.play();
             }
             bloqueado = false;
-            }
-    /*}*/ else{
+            } else{
         setTimeout(() =>{
                     cartaVirada.classList.add('virado');
                     cartaVirada.innerHTML = '';
