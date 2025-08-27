@@ -7,6 +7,7 @@ let pontuação = 0;
 let bloqueado = false;
 let cartas = ['🐶','🐱','🐭','🐹','🐰','🦊','🐻','🐼'];
 cartas = [...cartas, ...cartas]; 
+let mensagem= document.getElementById('mensagem');
 //variaveis
 
 
@@ -34,6 +35,7 @@ function startGame(card){
 function desvirarCarta(card){
     if(card === cartaVirada) return;
     if(bloqueado) return
+    if(card.classList.contains('acertou')) return;
     card.classList.remove('virado');
     card.innerHTML = card.dataset.emoji;
     if(!cartaVirada){
@@ -43,15 +45,25 @@ function desvirarCarta(card){
         bloqueado = true;
     }
 
-    if(cartaVirada && cartaVirada2){
+    /*if(cartaVirada && cartaVirada2){*/
         if(cartaVirada.dataset.emoji === cartaVirada2.dataset.emoji){
+            cartaVirada.classList.add('acertou');
+            cartaVirada2.classList.add('acertou');
+
             cartaVirada = null;
             cartaVirada2 = null;
             pontuação++;
             pontos.innerText = "Pontuação:" + pontuação;
+            if(pontuação === cartas.length / 2){
+                const mensagemResultado = document.getElementById('mensagem-resultado');
+                const audio = new Audio('audio/crowd_small_chil_ec049202_9klCwI6.mp3');
+                mensagemResultado.style.display = 'block';
+                audio.play();
+            }
             bloqueado = false;
-        } else {
-            setTimeout(() =>{
+            }
+    /*}*/ else{
+        setTimeout(() =>{
                     cartaVirada.classList.add('virado');
                     cartaVirada.innerHTML = '';
                     cartaVirada2.classList.add('virado');
@@ -62,7 +74,8 @@ function desvirarCarta(card){
                     }, 900)
             }
     }
-}
+
+
 
 
 // função para embaralhar as cartas utilizando o algoritmo fisher-yates //

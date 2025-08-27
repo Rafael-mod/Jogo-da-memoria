@@ -21,31 +21,28 @@ div#container-memoria {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-div.painel {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    gap: 10px;
-    margin-right: 4rem;
-    margin-top: 15rem;
-}
+div.painel { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-right: 4rem; margin-top: 15rem; } 
 
-div.painel button { 
-    background-color: #6C5B7B;
-    color: white;
-    font-size: 3em;
-    margin: 0; 
-    border-radius: 12px;
-    cursor: pointer;
-}
+div.painel button { background-color: #6C5B7B; color: white; font-size: 3em; margin: 0; border-radius: 12px; cursor: pointer; } 
 
-div.painel span {
+div.painel span { background-color: #FFDDC1; color: #355C7D; font-size: 2em; margin: 0; border-radius: 12px; } 
+
+#mensagem-resultado {
+    position: fixed;      
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: #FFDDC1;
     color: #355C7D;
-    font-size: 2em;
-    margin: 0;
+    font-size: 3em;
+    text-align: center;
+    padding: 1em 2em;
     border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    display: none;       
+    z-index: 1000;            
 }
+
 
 div#container-cartas{
     width: 730px;
@@ -65,6 +62,10 @@ div#container-cartas{
     border: 2px solid rgba(0,0,0,0.3);
     box-sizing: border-box;
     transition: transform 0.5s;
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .card:hover, .virado:hover{
     cursor:pointer;
