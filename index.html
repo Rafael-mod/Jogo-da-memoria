@@ -3,41 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Jogo da memória!</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <title>Jogo da Memória!</title>
 </head>
 <body>
-    <div id="container-memoria">
-        <div id="container-cartas">
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-        </div>        
-        <div class="painel">
-        <button id="loadbttn">Jogar!</button>
-        <span id="pontos">Pontuação: </span>
-        <span id="contador">Tempo: 0s</span>
-        <label class="switch">
-        <input type="checkbox" id="toggle-tema">
-        <span class="slider"></span>
-        </label>
-        <span style="font-size:1.2em; color:#333;">Tema Azul</span>
-        </div>
-    </div>
+
+    <main id="container-memoria">
+
+        <section id="container-cartas">
+            </section>
+
+        <aside class="painel">
+            <button id="loadbttn">Jogar!</button>
+            <span id="pontos">Pontuação: 0</span>
+            <span id="contador">Tempo: 0s</span>
+            <label class="switch">
+                <input type="checkbox" id="toggle-tema">
+                <span class="slider"></span>
+            </label>
+            <span class="toggle-label">Tema Azul</span>
+        </aside>
+
+    </main>
+
     <div id="mensagem-resultado">Parabéns! 🎉</div>
+
+    <script src="Js/app.js"></script>
+
 </body>
-<script src="app.js"></script>
 </html>
